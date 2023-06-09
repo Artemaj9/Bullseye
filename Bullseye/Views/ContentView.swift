@@ -17,6 +17,7 @@ struct ContentView: View {
     var body: some View {
         ZStack{
             backgroundGradient
+                .ignoresSafeArea()
             VStack {
                 VStack {
                     Text("🎯🎯🎯\n PUT THE BULLSEYE AS CLOSE AS YOU CAN TO")
@@ -47,6 +48,7 @@ struct ContentView: View {
                         actions: {
                             Button("Awesome") {
                                 print("Alert closed")
+                                game = Game()
                             }
                         },
                         message: {
