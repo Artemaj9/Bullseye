@@ -20,13 +20,21 @@ struct ContentView: View {
                 .ignoresSafeArea()
             VStack {
                 VStack {
-                    Text("🎯🎯🎯\n PUT THE BULLSEYE AS CLOSE AS YOU CAN TO")
+                    Text("🎯🎯🎯")
                         .bold()
                         .multilineTextAlignment(.center)
-                        .lineSpacing(4.0)
-                        .font(.footnote)
+                        .lineSpacing(7.0)
+                        .font(.largeTitle)
                         .kerning(2.0)
-                    
+                        .padding(.bottom, 20.0)
+                    Text(" PUT THE BULLSEYE AS CLOSE AS YOU CAN TO")
+                        .font(.footnote)
+                        .bold()
+                        .multilineTextAlignment(.center)
+                        .lineSpacing(7.0)
+                        .kerning(2.0)
+                        .padding()
+                        
                     Text(String(game.target))
                         .kerning(-1.0)
                         .font(.largeTitle)
@@ -34,10 +42,11 @@ struct ContentView: View {
                     HStack {
                         Text("1")
                             .bold()
+                            .padding()
                         Slider(value: $sliderValue, in: 1.0...100.0)
                         Text("100")
                             .bold()
-                        
+                            .padding()
                     }
                     Button("Hit me") {
                         alertIsVisible = true
